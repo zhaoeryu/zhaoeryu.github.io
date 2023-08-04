@@ -1,36 +1,17 @@
 ---
-lang: zh-CN
 title: 首页
-description: 页面的描述
 home: true
-heroImage: https://vuejs.org/images/logo.png
+heroImage: ./logo.png
 actions:
-- text: 快速上手
-  link: /zh/guide/getting-started.html
+- text: 快速开始 →
+  link: /vue2/
   type: primary
-- text: 项目简介
-  link: /guide/
-  type: secondary
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue 驱动
-  details: 享受 Vue 的开发体验，可以在 Markdown 中使用 Vue 组件，又可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。
-footer: 我是页脚
+- title: 前后端分离
+  details: 提供前后端分离的版本：使用的前端技术Vue、ElementUI后端SpringBoot & SaToken完全分离的权限管理系统。
+- title: 代码生成器
+  details: 在线配置表信息生成对应的代码，一键生成模块，包含增删改查/排序/导出/权限控制等操作，编译即可使用。
+- title: 功能完善
+  details: 内置完整的权限架构，包括：菜单、角色、用户、字典、参数、监控、代码生成等一系列系统常规模块。
+footer: MIT Licensed | Copyright © 2023-2023 eu All Rights Reserved Eu
 ---
-
-# 首页
-
-
-```javascript
-// 配置 @vuepress/theme-default
-import { defaultTheme } from '@vuepress/theme-default'
-
-export default {
-  theme: defaultTheme({
-    // 在这里进行配置
-  }),
-}
-```
