@@ -1,3 +1,8 @@
 # 常见问题
 
-/vue2/other/faq
+如果您遇到了问题，可以先看看这里有没有您的问题 [Gitee / isuues](https://gitee.com/zhaoeryu/eu-vue2/issues)
+
+## 我有问题怎么办
+给项目提issues
+- [GitHub / issues](https://github.com/zhaoeryu/eu-vue2/issues)
+- [Gitee / isuues](https://gitee.com/zhaoeryu/eu-vue2/issues)

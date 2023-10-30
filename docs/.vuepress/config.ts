@@ -1,11 +1,14 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import Navbar from "./config/navbar"
+import Sidebar from "./config/sidebar"
 
 export default defineUserConfig({
     lang: 'zh-CN',
     title: 'EuBackend',
-    description: '使用EuBackend快速构建web应用程序',
+    description: '基于SpringBoot开发的轻量级快速开发平台🔥🔥🔥',
     head: [
       ['link', { rel: 'icon', href: 'logo.png' }]
     ],
@@ -15,118 +18,24 @@ export default defineUserConfig({
             '您访问的页面不存在',
         ],
         backToHome: '返回首页',
-        navbar: [
-            {
-                text: 'Vue2',
-                link: '/vue2/',
-            },
-            // {
-            //     text: 'Vue3',
-            //     link: '/vue3',
-            // },
-            // {
-            //     text: 'React',
-            //     link: '/react',
-            // },
-            // {
-            //     text: '小程序',
-            //     link: '/miniapp',
-            // },
-            {
-                text: '生态系统',
-                children: [
-                    {
-                        text: '项目',
-                        children: [
-                            {
-                                text: 'eu-backend-vue2',
-                                link: '/first/second/'
-                            },
-                            {
-                                text: 'eu-backend-vue3',
-                                link: '/first/second/second.md'
-                            },
-                            {
-                                text: 'eu-backend-react',
-                                link: '/first/second/second.md'
-                            },
-                            {
-                                text: 'eu-backend-miniapp',
-                                link: '/first/second/second.md'
-                            },
-                        ]
-                    },
-                    {
-                        text: '帮助',
-                        children: [
-                            {
-                                text: '我要提问',
-                                link: 'https://gitee.com/zhaoeryu/eu-backend-web/issues'
-                            },
-                            {
-                                text: '常见问题',
-                                link: '/vue2/other/faq',
-                                activeMatch: '/vue2/other/faq',
-                            },
-                        ]
-                    }
-                ],
-            },
-            {
-                text: 'Github',
-                link: 'https://github.com/zhaoeryu',
-            },
-            {
-                text: 'Gitee',
-                link: 'https://gitee.com/zhaoeryu',
-            },
-        ],
-        sidebar: {
-            '/vue2/': [
-                {
-                    text: '文档',
-                    children: [
-                        '/vue2/',
-                        '/vue2/doc/kslj',
-                        '/vue2/doc/hjbs',
-                        '/vue2/doc/hdsc',
-                        '/vue2/doc/qdsc',
-                        '/vue2/doc/zjwd',
-                        '/vue2/doc/cjjc',
-                        '/vue2/doc/gxrz',
-                    ],
-                },
-                {
-                    text: '其他',
-                    children: [
-                        '/vue2/other/faq',
-                        '/vue2/other/donate'
-                    ]
-                },
-           ],
-            // '/vue3/': [
-            //     {
-            //         text: '文档',
-            //         children: [
-            //             '/vue3/',
-            //             '/vue2/doc/kslj',
-            //             '/vue2/doc/hjbs',
-            //             '/vue2/doc/hdsc',
-            //             '/vue2/doc/qdsc',
-            //             '/vue2/doc/zjwd',
-            //             '/vue2/doc/cjjc',
-            //             '/vue2/doc/gxrz',
-            //         ]
-            //     },
-            //     {
-            //         text: '其他',
-            //         children: [
-            //             'other/faq',
-            //             '/vue2/other/donate'
-            //         ]
-            //     }
-            // ]
-        }
+        contributors: false,
+
+        // repo: 'https://github.com/zhaoeryu/zhaoeryu.github.io',
+        // repoLabel: '在Github上编辑此页',
+        // 假如你的文档仓库和项目本身不在一个仓库：
+        docsRepo: 'zhaoeryu/zhaoeryu.github.io',
+        // 假如文档不是放在仓库的根目录下：
+        docsDir: 'docs',
+        // 假如文档放在一个特定的分支下：
+        docsBranch: 'master',
+
+        editLink: true,
+        editLinkText: '帮助我们改善此页面！',
+        lastUpdated: false,
+        lastUpdatedText: '更新日期',
+
+        navbar: Navbar,
+        sidebar: Sidebar
     }),
     plugins: [
         searchPlugin({
@@ -136,6 +45,13 @@ export default defineUserConfig({
                     placeholder: '搜索文档',
                 }
             },
+            maxSuggestions: 10,
+            // https://www.toptal.com/developers/keycode
+            hotKeys: ['Meta', '/'],
         }),
+        // https://plugin-md-enhance.vuejs.press/zh/guide/mermaid.html#%E9%85%8D%E7%BD%AE
+        mdEnhancePlugin({
+            mermaid: true
+        })
     ],
 })

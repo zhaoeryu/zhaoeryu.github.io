@@ -4,7 +4,7 @@ sidebarDepth: 0
 
 # 介绍
 
-EuVue3基于vue3、pinia、element-plus等前端技术栈
+EuBackend后端基于SpringBoot、Sa-Token、MybatisPlus、Mysql、Redis等技术栈，权限控制采用的是RBAC模型。
 
 ## 主要特性
 - 简洁而不简单的RBAC权限管理体系
@@ -19,16 +19,18 @@ EuVue3基于vue3、pinia、element-plus等前端技术栈
 ## 技术选型
 
 1、系统环境
-- NodeJs: v16.18.0
-- npm: 8.19.2
-- vite: 4.4.9
+- `JDK` 1.8.x
+- `Maven` 3.8.x
+- `Mysql` 5.7.x
+- `Redis` 6.2.x
 
 2、框架
-- `vue` 3.3.4
-- `pinia` 2.1.6
-- `vue-router` 4.2.4
-- `axios` 1.5.0
-- `element-plus` 2.3.12
+- `SpringBoot` 2.4.x
+- `Sa-Token` 1.34.x
+- `MybatisPlus` 3.4.x
+- `Druid` 1.1.x
+- `Quartz` 2.3.x
+- `Knife4j` 4.1.x
 
 ## 技术交流群
 

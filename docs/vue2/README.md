@@ -1,32 +1,35 @@
+---
+sidebarDepth: 0
+---
+
 # 介绍
 
-<h1 align="center">EuBackend</h1>
-<p align="center">基于SpringBoot开发的轻量级Java快速开发框架</p>
-<p align="center">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
-    <img style="margin: 0 4px;" src="https://img.shields.io/badge/Eu-0.0.1-blue" alt="Eu">
-</p>
+EuVue2基于vue2、vuex、element-ui等前端技术栈
 
-::: tip 项目动机
-看了很多优秀的开源项目，但是却没有发现适合自己的，于是利用空闲时间开始自己写了一套后台管理系统
-:::
+## 主要特性
+- 简洁而不简单的RBAC权限管理体系
+- 强大的代码生成功能（从sql>mapper>java>前端页面 全部搞定）
+- 数据权限控制，通过注解轻松实现
+- 强大的登录体系：检查验证码、密码错误次数、账号状态等
+- 完善的日志记录体系简单注解即可实现
+- 完善的XSS防范及脚本过滤，彻底杜绝XSS攻击
+- 封装Excel导入导出，数据量大也不怕，使用更简单
+- 动态数据源，可以轻松实现多数据源切换
 
-<strong>EuBackend</strong>是一个 Java EE 企业级快速开发平台，基于最新技术组合（Spring Boot、Sa-Token、MyBatisPlus、Vue、ElementUI），内置模块如：部门管理、角色用户、菜单及按钮授权、数据权限、系统参数、日志管理、代码生成等。在线定时任务配置；
+## 技术选型
 
-<strong>在线体验</strong>
+1、系统环境
+- NodeJs: v16.18.0
+- npm: 8.19.2
+- webpack: 5.88.2
 
-- 演示地址：[https://zhaoeryu.github.io/](https://zhaoeryu.github.io/)
-- 代码下载：[https://gitee.com/zhaoeryu/eu-backend-web](https://gitee.com/zhaoeryu/eu-backend-web)
+2、框架
+- `vue` 2.6.14
+- `vuex` 3.6.2
+- `vue-router` 3.0.2
+- `axios` 1.4.0
+- `element-ui` 2.15.12
 
-<strong>系统需求</strong>
+## 技术交流群
 
-- JDK：1.8+
-- MySQL：5.7+
-- Maven：3.0+
-- Node.js：10.0+
-- Vue：2.0+
-- Redis：3.0+
-
-<strong>技术交流群</strong>
-
-- QQ群：[![加入QQ群](https://img.shields.io/badge/QQ群-1061865275-blue.svg)](https://jq.qq.com/?_wv=1027&k=5bV7v0R)
+- QQ群：[![加入QQ群](https://img.shields.io/badge/QQ群-852154969-blue.svg)](https://qm.qq.com/cgi-bin/qm/qr?k=m9IAd3bFEJRUaOfkpg0SznBD6_nLzuZa&jump_from=webapi&authKey=SiSgsYNnzi55qEZELcw0PtTKs5uw1d+AxpKyROwETbuleUhS6Rh+T/qJHKEyrzl9)
