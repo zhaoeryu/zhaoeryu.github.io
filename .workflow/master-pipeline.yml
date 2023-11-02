@@ -1,6 +1,11 @@
 version: '1.0'
 name: master-pipeline
 displayName: MasterPipeline
+variables:
+  global:
+    - USERNAME
+    - ACCESS_TOKEN
+    - REPO
 stages:
   - stage:
     name: compile
