@@ -10,10 +10,16 @@ stages:
         name: build_nodejs
         displayName: Nodejs 构建
         # 支持8.16.2、10.17.0、12.16.1、14.16.0、15.12.0五个版本
-        nodeVersion: 14.16.0
+        nodeVersion: 16.14.2
         # 构建命令：安装依赖 -> 清除上次打包产物残留 -> 执行构建 【请根据项目实际产出进行填写】
         commands:
-          - npm install && rm -rf ./docs/.vuepress/dist && npm run docs:build
+          - npm config set registry https://registry.npmmirror.com
+          - npm install && npm run docs:build && cd docs/.vuepress/dist
+          - git init . && git config --local init.defaultBranch master
+          - git config --global user.email "cn.zhaoey@gmail.com"
+          - git config --global user.name "GiteeGo Pipeline"
+          - git add . &&  git commit -m "pushed by gitee-go"
+          - git push https://${USERNAME}:${ACCESS_TOKEN}@gitee.com/${REPO} master:gt-pages --force
         # 非必填字段，开启后表示将构建产物暂存，但不会上传到制品库中，7天后自动清除
         artifacts:
             # 构建产物名字，作为产物的唯一标识可向下传递，支持自定义，默认为BUILD_ARTIFACT。在下游可以通过${BUILD_ARTIFACT}方式引用来获取构建物地址
@@ -21,6 +27,9 @@ stages:
             # 构建产物获取路径，是指代码编译完毕之后构建物的所在路径
             path:
               - ./docs/.vuepress/dist
+        caches:
+          - ~/.npm
+          - ~/.yarn
       - step: publish@general_artifacts
         name: publish_general_artifacts
         displayName: 上传制品
@@ -29,19 +38,19 @@ stages:
         # 上传到制品库时的制品命名，默认output
         artifactName: output
         dependsOn: build_nodejs
-  - stage:
-    name: release
-    displayName: 发布
-    steps:
-      - step: publish@release_artifacts
-        name: publish_release_artifacts
-        displayName: '发布'
-        # 上游上传制品任务的产出
-        dependArtifact: output
-        # 发布制品版本号
-        version: '1.0.0.0'
-        # 是否开启版本号自增，默认开启
-        autoIncrement: true
+#  - stage:
+#    name: release
+#    displayName: 发布
+#    steps:
+#      - step: publish@release_artifacts
+#        name: publish_release_artifacts
+#        displayName: '发布'
+#        # 上游上传制品任务的产出
+#        dependArtifact: output
+#        # 发布制品版本号
+#        version: '1.0.0.0'
+#        # 是否开启版本号自增，默认开启
+#        autoIncrement: true
 triggers:
   push:
     branches:
